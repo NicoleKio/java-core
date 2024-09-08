@@ -1,5 +1,7 @@
 package hw_1;
 
+import java.util.ArrayList;
+
 public class Main_hw_1 {
     public static void main(String[] args) {
 
@@ -17,13 +19,12 @@ public class Main_hw_1 {
 
         System.out.println("-------------------------------");
 
-        Book book1 = new Book("Book1",500, new String[] {"John Doe", "J. K. Rowling"}, "drama1");
-        Book book2 = new Book("Book2",500, new String[] {"Stephen King", "George R. R. Martin"}, "drama2");
-        Book book3 = new Book("Book3",500, new String[] {"John Green", "James Patterson"}, "drama3");
-        Book book4 = new Book("Book4",500, new String[] {"John Grisham", "Khaled Hosseini"}, "drama4");
-        Book book5 = new Book("Book5",500, new String[] {"John Doe", "Stephen KingStephen King"}, "drama5");
-
-        Book[] books = {book1, book2, book3, book4, book5};
+        Book[] books = new Book[5];
+        books[0] = new Book("Book1",500, new String[] {"John Doe", "J. K. Rowling"}, "drama1");
+        books[1] = new Book("Book2",500, new String[] {"Stephen King", "George R. R. Martin"}, "drama2");
+        books[2] = new Book("Book3",500, new String[] {"John Green", "James Patterson"}, "drama3");
+        books[3] = new Book("Book4",500, new String[] {"John Grisham", "Khaled Hosseini"}, "drama4");
+        books[4] = new Book("Book5",500, new String[] {"John Doe", "Stephen KingStephen King"}, "drama5");
 
         for (Book oneBook : books) {
             System.out.println(oneBook);
@@ -44,6 +45,31 @@ public class Main_hw_1 {
         }
 
         System.out.println("-------------------------------");
+
+
+        ArrayList<User> users = new ArrayList<User>();
+        users.add(new User(1, 1, "sunt aut facere repellat provident","occaecati excepturi optio reprehenderit"));
+        users.add(new User(2, 2, "sunt aut facere repellat provident","occaecati excepturi optio reprehenderit"));
+        users.add(new User(3, 3, "sunt aut facere repellat provident","occaecati excepturi optio reprehenderit"));
+        users.add(new User(4, 4, "sunt aut facere repellat provident","occaecati excepturi optio reprehenderit"));
+        users.add(new User(5, 5, "sunt aut facere repellat provident","occaecati excepturi optio reprehenderit"));
+
+        for (User oneUser : users) {
+            System.out.println(oneUser);
+        }
+
+        System.out.println("---------------------------------");
+
+        ArrayList<Post> posts = new ArrayList<>();
+        posts.add(new Post(1, 1, "hello Okten1", "kio8@gmail.com","laudantium enim quasi est quidem magnam"));
+        posts.add(new Post(2, 2, "hello Okten2", "kio8@gmail.com","laudantium enim quasi est quidem magnam"));
+        posts.add(new Post(3, 3, "hello Okten3", "kio8@gmail.com","laudantium enim quasi est quidem magnam"));
+        posts.add(new Post(4, 4, "hello Okten4", "kio8@gmail.com","laudantium enim quasi est quidem magnam"));
+        posts.add(new Post(5, 5, "hello Okten5", "kio8@gmail.com","laudantium enim quasi est quidem magnam"));
+
+        for (Post onePost : posts) {
+            System.out.println(onePost);
+        }
 
 
     }
