@@ -8,9 +8,14 @@ import hw_2.Papers_units.Book;
 import hw_2.Papers_units.Comics;
 import hw_2.Papers_units.Magazine;
 import hw_2.Papers_units.Papyrus;
+import hw_2.Student_components.Car;
+import hw_2.Student_components.Gender;
+import hw_2.Student_components.Skill;
 import hw_2.User_components.Address;
 import hw_2.User_components.Company;
 import hw_2.User_components.Geo;
+
+import java.util.ArrayList;
 
 public class Main_hw2 {
     public static void main(String[] args) {
@@ -29,6 +34,7 @@ public class Main_hw2 {
                 new Company("Romaguera-Crona", "Multi-layered", "harness real-time e-markets"));
 
         System.out.println(user);
+
 
 
         //---------------------------------------
@@ -50,20 +56,35 @@ public class Main_hw2 {
         System.out.println(ultrabook3);
 
 
-        //----------------------------------------
 
+        //----------------------------------------
 
         Papyrus papyrus1 = new Papyrus(1);
         Book book1 = new Book("solid", "white");
         Magazine magazine1 = new Magazine("Adelaide de Azu", "Green Apple", "Rabbit's Hat Company", 20021);
         Comics comics1 = new Comics("Ray Sentolomew", "Sacral Flame", "horror", true);
 
-
-        //---------------------------------------
-
+        System.out.println(comics1);
 
 
 
+        //----------------------------------------------
+
+        Student student = new Student();
+        student.setId(1);
+        student.setName("Luise");
+        student.setSurname("Viagarti");
+        student.setAge(13);
+        student.setGender(Gender.FEMALE);
+        ArrayList<Skill> skills = new ArrayList<>();
+        skills.add(new Skill("java",10));
+        skills.add(new Skill("C++",8));
+        student.setSkills(skills);
+        student.setCar(new Car(
+             "tesla", 2022, 250
+        ));
+
+        System.out.println(student);
     }
 
 }

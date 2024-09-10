@@ -2,7 +2,6 @@ package hw_2;
 
 import hw_2.User_components.Address;
 import hw_2.User_components.Company;
-import hw_2.User_components.Geo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
