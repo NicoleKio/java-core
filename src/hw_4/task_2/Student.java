@@ -2,14 +2,16 @@ package hw_4.task_2;
 
 
 import hw_2.Student_components.Skill;
-import lombok.Builder;
-import lombok.Data;
+
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Student {
     private int id;
     private String name;
@@ -17,7 +19,7 @@ public class Student {
     private String email;
     private int age;
     private Gender gender;
-    private ArrayList<Skill> skills;
+    private List<Skill> skills = new ArrayList<Skill>();
     private Car car;
 
 

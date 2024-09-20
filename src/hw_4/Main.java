@@ -1,11 +1,12 @@
 package hw_4;
 
-import hw_2.Student_components.Car;
 import hw_2.Student_components.Skill;
+import hw_4.task_2.Car;
 import hw_4.task_2.Gender;
 import hw_4.task_2.Student;
-import lombok.Builder;
 
+
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -21,21 +22,57 @@ public class Main {
         System.out.println(users);
 
 
-        HashSet<Student> students = new HashSet<Student>();
-        students.add(Student.builder()
-                .id(1)
-                .name("Eric")
-                .surname("Wonder")
-                .age(20)
-                .email("er111@gmail.com")
-                .gender(Gender.MALE)
-                .skills(
-                        new Skill("k", 5),
-                        new Skill("java", 8)
-                )
-                .car( new Car("tesla", 2005, 55)).build()
+        //-----------------------------------------
 
-                );
+        HashSet<Student> students = new HashSet<Student>();
+
+        students.add(
+                new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
+                Car.builder().model("k").power(5).year(2005).build())
+        );
+        students.add(
+                new Student(2, "Lola", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+//        Student eric = new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+//                        List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
+//                        Car.builder().model("k").power(5).year(2005).build());
+//        students.add(eric);
+
+
+
+//        eric.getSkills().add(new Skill("ts", 5));
+//        eric.getSkills().add(new Skill("html", 7));
+//        eric.getSkills().add(new Skill("java", 10));
+//        eric.getSkills().add(new Skill("python", 5));
+
+//        Student mira = new Student(1, "mira", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+//                null,
+//                Car.builder().model("k").power(5).year(2005).build());
+//        mira.getSkills().add(new Skill("ts", 5));
+//        mira.getSkills().add(new Skill("js", 8));
+//
+//
+//        Student kira = new Student(1, "mira", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+//                null,
+//                Car.builder().model("k").power(5).year(2005).build());
+//        kira.getSkills().add(new Skill("js", 8));
+//
+//        Student arian = new Student(1, "mira", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+//                null,
+//                Car.builder().model("k").power(5).year(2005).build());
+//        arian.getSkills().add(new Skill("js", 8));
+//        arian.getSkills().add(new Skill("java", 9));
+//        arian.getSkills().add(new Skill("c++", 4));
+
+
+        System.out.println(students);
+
+
+
 
     }
 }
