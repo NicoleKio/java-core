@@ -4,27 +4,68 @@ import hw_2.Student_components.Skill;
 import hw_4.task_2.Car;
 import hw_4.task_2.Gender;
 import hw_4.task_2.Student;
-
-
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
+        // task 1
         List<User> users = new ArrayList<User>();
         users.add(User.builder().name("John").age(12).build());
-        users.add(User.builder().name("Nana").age(15).build());
+        users.add(User.builder().name("Nana-nana").age(15).build());
         users.add(User.builder().name("Mio").age(16).build());
-        users.add(User.builder().name("Linn").age(14).build());
+        users.add(User.builder().name("Lyney").age(14).build());
+
 
         users.sort(Comparator.comparing(User::getAge));
         System.out.println(users);
 
+        // - відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
 
+//        users.sort(new Comparator<User>(){
+//            public int compare(User o1, User o2) {
+//                return o1.getName().length() - o2.getName().length();
+//            }
+//        }
+//        );
+
+        System.out.println("--------------------------------");
+        users.sort(Comparator.comparingInt(o -> o.getName().length())
+        );
+        System.out.println(users);
+
+
+        System.out.println("--------------------------------");
         //-----------------------------------------
 
-        HashSet<Student> students = new HashSet<Student>();
+
+        // task 2
+
+        List<String> characters = new ArrayList<>();
+        characters.add("Lacus");
+        characters.add("Adelaide");
+        characters.add("Luise");
+        characters.add("Aqzert");
+        characters.add("Ray");
+        characters.add("Dalia");
+        characters.add("Doloria");
+        characters.add("Ghran");
+        characters.add("Claude");
+        characters.add("Naygrim");
+        characters.add("Lutikoria");
+        characters.add("Liam");
+        characters.add("Ines");
+        characters.add("Vi");
+        characters.add("Elsa");
+
+        System.out.println(characters);
+        Collections.sort(characters);
+        System.out.println(characters);
+
+        System.out.println("--------------------------------");
+
+        // task 3
+        HashSet<Student> students = new HashSet<>();
 
         students.add(
                 new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
@@ -70,6 +111,9 @@ public class Main {
 
 
         System.out.println(students);
+
+        System.out.println("--------------------------------");
+
 
 
 
