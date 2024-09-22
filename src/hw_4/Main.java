@@ -4,6 +4,10 @@ import hw_2.Student_components.Skill;
 import hw_4.task_2.Car;
 import hw_4.task_2.Gender;
 import hw_4.task_2.Student;
+import hw_4.task_3.Person;
+import hw_4.task_3.Pet;
+import hw_4.task_3.ZooClub;
+
 import java.util.*;
 
 public class Main {
@@ -173,11 +177,7 @@ public class Main {
 
         // Створити TreeSet з 10 об'єктів, посортовану за кількістю скілів від меньшого до більшого
 
-        SortedSet<Student> studentsSkills = new TreeSet<>(new Comparator<Student>() {
-            public int compare(Student s1, Student s2) {
-                return s1.getSkills().size() - s2.getSkills().size();
-            }
-        });
+        Set<Student> studentsSkills = new TreeSet<>(Comparator.comparingInt(s -> s.getSkills().size()));
 
         studentsSkills.add(
                 new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
@@ -241,7 +241,29 @@ public class Main {
 
 
         System.out.println(studentsSkills);
+        System.out.println("---------------------------------------");
 
+
+        // task 3
+
+//        Створити клас Зооклуб. В цьому класі створити одне поле: private Map <Person, List <Pet>> club;
+//        В зооклубі створити методи, та застосувати їх
+//        1) додати учасника в клуб;
+//        2) додати тваринку до учасника клубу.
+//        3) видалити тваринку з власника.
+//        4) видалити учасника клубу.
+//        5) видалити конкретну тваринку з усіх власників.
+//        6) вивести на екран зооклуб.
+//        Подумати яким повинен бути Person, щоб була можливість додавати йому тваринку.
+//                Подумати яким повинен бути Pet, щоб була можливість видаляти конкретну тваринку
+
+        ZooClub zooClub = new ZooClub();
+        zooClub.addOwner("Ray");
+        zooClub.addOwner("Yukisa");
+        zooClub.addOwner("Lacus");
+        zooClub.addOwner("Lutik");
+
+        System.out.println(zooClub);
 
 
 
