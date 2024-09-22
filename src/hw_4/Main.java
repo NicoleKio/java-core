@@ -36,10 +36,10 @@ public class Main {
 
 
         System.out.println("--------------------------------");
-        //-----------------------------------------
 
 
-        // task 2
+
+        //task 2
 
         List<String> characters = new ArrayList<>();
         characters.add("Lacus");
@@ -66,17 +66,76 @@ public class Main {
 
         // task 3
         HashSet<Student> students = new HashSet<>();
+        //Створити HashSet з 10 об'єктів, проітерувати її, видалити всіх чоловіків
 
         students.add(
                 new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
-                List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
+                List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5)),
                 Car.builder().model("k").power(5).year(2005).build())
         );
         students.add(
-                new Student(2, "Lola", "Wonder", "er111@gmail.com", 20, Gender.MALE,
-                        List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
+                new Student(2, "Lilith", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5)),
                         Car.builder().model("k").power(5).year(2005).build())
         );
+        students.add(
+                new Student(3, "Minerva", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                List.of(new Skill("s1", 5), new Skill("s2", 5)),
+                Car.builder().model("k").power(5).year(2005).build()));
+
+        students.add(
+                new Student(4, "Lacus", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5),
+                                new Skill("s4", 5), new Skill("s5", 5), new Skill("s6", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(5, "Yukisa", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5),
+                                new Skill("s4", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(6, "Dalia", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("3", 5),
+                                new Skill("s4", 5), new Skill("s5", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(7, "Ray", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(8, "Caroline", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(9, "Lutikoria", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        students.add(
+                new Student(10, "Adelaide", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+//        Iterator<Student> iterator = students.iterator();
+//        while (iterator.hasNext()) {
+//            Student next = iterator.next();
+//            if (next.getGender() == Gender.MALE) {
+//                iterator.remove();
+//            }
+//        }
+        students.removeIf(next -> next.getGender() == Gender.MALE);
 
 //        Student eric = new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
 //                        List.of(new Skill("l", 5), new Skill("m", 5), new Skill("s", 5)),
@@ -108,11 +167,80 @@ public class Main {
 //        arian.getSkills().add(new Skill("js", 8));
 //        arian.getSkills().add(new Skill("java", 9));
 //        arian.getSkills().add(new Skill("c++", 4));
-
-
         System.out.println(students);
 
         System.out.println("--------------------------------");
+
+        // Створити TreeSet з 10 об'єктів, посортовану за кількістю скілів від меньшого до більшого
+
+        SortedSet<Student> studentsSkills = new TreeSet<>(new Comparator<Student>() {
+            public int compare(Student s1, Student s2) {
+                return s1.getSkills().size() - s2.getSkills().size();
+            }
+        });
+
+        studentsSkills.add(
+                new Student(1, "Eric", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+        studentsSkills.add(
+                new Student(2, "Lilith", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+        studentsSkills.add(
+                new Student(3, "Minerva", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5)),
+                        Car.builder().model("k").power(5).year(2005).build()));
+
+        studentsSkills.add(
+                new Student(4, "Lacus", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5),
+                                new Skill("s4", 5), new Skill("s5", 5), new Skill("s6", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(5, "Yukisa", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5),
+                                new Skill("s4", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(6, "Dalia", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("3", 5),
+                                new Skill("s4", 5), new Skill("s5", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(7, "Ray", "Wonder", "er111@gmail.com", 20, Gender.MALE,
+                        List.of(new Skill("s1", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(8, "Caroline", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(9, "Lutikoria", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5), new Skill("s3", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+        studentsSkills.add(
+                new Student(10, "Adelaide", "Wonder", "er111@gmail.com", 20, Gender.FEMALE,
+                        List.of(new Skill("s1", 5), new Skill("s2", 5)),
+                        Car.builder().model("k").power(5).year(2005).build())
+        );
+
+
+        System.out.println(studentsSkills);
 
 
 
