@@ -262,6 +262,9 @@ public class Main {
         zooClub.addOwner("Yukisa");
         zooClub.addOwner("Lacus");
         zooClub.addOwner("Lutik");
+        zooClub.addPetToOwner(
+
+        )
 
         System.out.println(zooClub);
 
