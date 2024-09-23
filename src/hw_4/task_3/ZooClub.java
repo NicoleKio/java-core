@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static jdk.nio.zipfs.ZipFileAttributeView.AttrID.owner;
 
 @Data
 @NoArgsConstructor
@@ -21,9 +20,9 @@ public class ZooClub {
         club.put(new Person(newPerson, new ArrayList<>()), new ArrayList<>());
 
 
-    public void addPetToOwner(String newOwner, String pet) {
-            club.;
-    }
+//    public void addPetToOwner(String newOwner, String pet) {
+//            club.;
+//    }
 
 
     }
